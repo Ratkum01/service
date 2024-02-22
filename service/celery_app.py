@@ -16,3 +16,6 @@ app.autodiscover_tasks()
 def debug_task():
     time.sleep(20)
     print('Hello form debug_task')
+
+# docker-compose run --rm web-app sh -c "python manage.py shell"
+# from celery_app import debug_task
