@@ -13,11 +13,8 @@ services:
       - DB_PASS=pass
     command: >
       sh -c "python manage.py runserver 0.0.0.0:8000"
-
     depends_on:
       - database
-
-
   database:
    image: postgres:16.1-alpine3.19
    environment:
@@ -28,6 +25,7 @@ services:
   redis:
     image: redis:7.2.4-alpine
     hostname: redis
+
 
   worker:
     build:
@@ -79,6 +77,5 @@ services:
       - redis
     depends_on:
       - redis
-
     ports:
-      - '5555:5555'
+      - "5555:5555"
